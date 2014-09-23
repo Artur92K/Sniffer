@@ -39,7 +39,7 @@ int main(void) {
 		default:
 			printf("Brak wyboru");
 			puts("TEST2");
-//
+//aa
 	}
 	return EXIT_SUCCESS;
 }
