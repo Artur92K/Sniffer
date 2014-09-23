@@ -6,11 +6,11 @@
 #include <linux/if_ether.h>
 #include <linux/if_arp.h>
 #include <sys/ioctl.h>
-#include ".h"
+#include "ProtocolHeaders.h"
 
 #define INTERFACE	"wlan0"
 
-int main(void) {
+int main3(void) {
 
 	struct nagl_eth naglowek_eth;
 	struct nagl_arp naglowek_arp;
