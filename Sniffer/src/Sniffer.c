@@ -38,7 +38,7 @@ int main(void) {
 			break;
 		default:
 			printf("Brak wyboru");
-			puts("TEST");
+			puts("TEST2");
 //
 	}
 	return EXIT_SUCCESS;
