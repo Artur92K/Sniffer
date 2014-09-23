@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include "ProtocolHeaders.h"
 
-int main1(void) {
+int SztucznaRamka(void) {
 
 	struct nagl_eth naglowek_eth;
 	struct nagl_arp naglowek_arp;
@@ -24,10 +24,10 @@ int main1(void) {
 	struct eth_ip_udp pakiet_udp;
 	struct eth_ip_tcp pakiet_tcp;
 	struct eth_arp pakiet_arp;
-	unsigned int eth_ip_icmp = sizeof(struct eth_ip_icmp); // mam
-	unsigned int eth_ip_udp = sizeof(struct eth_ip_udp); // robi sie
-	unsigned int eth_ip_tcp = sizeof(struct eth_ip_tcp); //
-	unsigned int eth_arp = sizeof(struct eth_arp); // mam
+	unsigned int eth_ip_icmp = sizeof(struct eth_ip_icmp);
+	unsigned int eth_ip_udp = sizeof(struct eth_ip_udp);
+	unsigned int eth_ip_tcp = sizeof(struct eth_ip_tcp);
+	unsigned int eth_arp = sizeof(struct eth_arp);
 
 	unsigned char buffor_eth_arp[] = { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x94,
 			0xce, 0x2c, 0x2b, 0xe8, 0xa1, 0x08, 0x06, 0x00, 0x01, 0x08, 0x00,
@@ -106,7 +106,8 @@ puts ("a");
 	IP(&naglowek_ip);
 	TCP(&naglowek_tcp);
 	printf("\n");
-	printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++==");
+
+	printf("\n----------========== Koniec symulacji ==========----------\n");
 
 	return EXIT_SUCCESS;
 

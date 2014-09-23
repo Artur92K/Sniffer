@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ProtocolHeaders.h"
-#pragma reverse bitfields;
 
 int main(void) {
 	int wybor;
@@ -19,13 +18,13 @@ int main(void) {
 
 	switch (wybor) {
 		case 1:
-			main1();
+			SztucznaRamka();
 			break;
 		case 2:
-			main2();
+			OdczytanieZKarty();
 			break;
 		case 3:
-			main3();
+			WyslaniePrzezKarte();
 			break;
 		default:
 			printf("Brak wyboru");

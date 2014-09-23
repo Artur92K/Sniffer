@@ -10,7 +10,7 @@
 
 #define INTERFACE	"wlan0"
 
-int main3(void) {
+int WyslaniePrzezKarte(void) {
 
 	struct nagl_eth naglowek_eth;
 	struct nagl_arp naglowek_arp;

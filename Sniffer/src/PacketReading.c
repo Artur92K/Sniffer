@@ -19,7 +19,7 @@
 
 #define ETH_FRAME_LEN 1518
 
-int main2(void) {
+int OdczytanieZKarty(void) {
 	puts("Lab_0"); /* prints Lab_0 */
 	struct nagl_eth naglowek_eth;
 	struct nagl_arp naglowek_arp;
