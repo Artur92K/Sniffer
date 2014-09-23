@@ -27,17 +27,18 @@ int main(void) {
 	scanf("%d", &wybor);
 
 	switch (wybor) {
-	case 1:
-		main1();
-		break;
-	case 2:
-		main2();
-		break;
-	case 3:
-		main3();
-		break;
-	default:
-		printf("Brak wyboru");
+		case 1:
+			main1();
+			break;
+		case 2:
+			main2();
+			break;
+		case 3:
+			main3();
+			break;
+		default:
+			printf("Brak wyboru");
+			puts("TEST");
 //
 	}
 	return EXIT_SUCCESS;
