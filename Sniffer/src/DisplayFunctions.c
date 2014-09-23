@@ -139,4 +139,5 @@ void UDP (struct nagl_udp *naglowek_udp){
 		printf("Długość UDP: %d %d \n", naglowek_udp->lenght[0],
 				naglowek_udp->lenght[1]);
 		printf("Suma kontrolna: %d \n", naglowek_udp->crc);
+		//asdasd
 }
