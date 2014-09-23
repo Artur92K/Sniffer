@@ -11,16 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ProtocolHeaders.h"
-#pragma reverse bitfields; // odwracanie bitow
-
-void pakiet_eth_arp(struct eth_arp *, struct nagl_eth *, struct nagl_arp *,
-		unsigned char *, unsigned int);
-void pakiet_eth_ip_tcp(struct eth_ip_tcp *, struct nagl_eth *, struct nagl_ip *,
-		struct nagl_tcp *, unsigned char *, unsigned int);
-void pakiet_eth_ip_icmp(struct eth_ip_icmp *, struct nagl_eth *,
-		struct nagl_ip *, struct nagl_icmp *, unsigned char *, unsigned int);
-void pakiet_eth_ip_udp(struct eth_ip_udp *, struct nagl_eth *, struct nagl_ip *,
-		struct nagl_udp *, unsigned char *, unsigned int);
 
 int main1(void) {
 
@@ -79,7 +69,7 @@ int main1(void) {
 	printf("Rozmiar pakietu ETH + ARP  %d Bajtow\n", eth_arp);
 
 //------------------------- ARP -----------------------------------------
-
+puts ("a");
 	pakiet_eth_arp(&pakiet_arp, &naglowek_eth, &naglowek_arp, &buffor_eth_arp,
 			eth_arp);
 

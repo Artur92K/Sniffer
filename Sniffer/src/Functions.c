@@ -38,10 +38,6 @@ void pakowanie_eth(struct nagl_eth *naglowek_eth, unsigned char *buffor_eth,
 	memcpy(&buffor_eth[34], naglowek_udp, 8);
 	// cel, źródło, rozmiar
 }
-/*void pakowanie_ip(struct nagl_ip *naglowek_ip, unsigned char *buffor_eth) {
- memcpy(buffor_eth+14, naglowek_ip, 20);
- // cel, źródło, rozmiar
- } */
 
 void pakiet_eth_arp(struct eth_arp *pakiet_arp, struct nagl_eth *naglowek_eth,
 		struct nagl_arp *naglowek_arp, unsigned char *bufor_eth_arp,
@@ -82,7 +78,7 @@ void pakiet_eth_ip_tcp(struct eth_ip_tcp *pakiet_tcp,
 
 }
 // funkcja odwracająca
-void* odrwacajacy(void* cokolwiek, unsigned int rozmiar) {
+void* reversing(void* cokolwiek, unsigned int rozmiar) {
 	unsigned char *tablica = (unsigned char *) cokolwiek;
 	unsigned char *wyjsciowy = (unsigned char*) malloc(rozmiar);
 	int i = 0;
@@ -94,8 +90,8 @@ void* odrwacajacy(void* cokolwiek, unsigned int rozmiar) {
 }
 
 unsigned short reverseshort(unsigned short value) {
-	return *(unsigned int*) odrwacajacy(&value, sizeof(value));
+	return *(unsigned int*) reversing(&value, sizeof(value));
 }
 unsigned short reverseint(unsigned int value) {
-	return *(unsigned int*) odrwacajacy(&value, sizeof(value));
+	return *(unsigned int*) reversing(&value, sizeof(value));
 }

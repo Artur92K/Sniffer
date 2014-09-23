@@ -1,10 +1,6 @@
 /*
  ============================================================================
- Name        : Lab_0.c
- Author      : krygier
- Version     : v1
- Copyright   : krygier
- Description : Lab_0
+ Reading packet using socket;
  ============================================================================
  */
 

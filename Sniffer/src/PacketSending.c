@@ -18,10 +18,7 @@ int main3(void) {
 	struct nagl_ip naglowek_ip;
 	struct nagl_icmp naglowek_icmp;
 	struct nagl_udp naglowek_udp;
-	struct eth_ip_icmp pakiet_icmp;
-	struct eth_ip_udp pakiet_udp;
-	struct eth_ip_tcp pakiet_tcp;
-	struct eth_arp pakiet_arp;
+
 	int s_out; /*deskryptor gniazda*/
 	int j;
 
@@ -128,4 +125,5 @@ int main3(void) {
 
 #endif //konic blokady wysylania
 	//*******************************************************************************
+	return EXIT_SUCCESS;
 }

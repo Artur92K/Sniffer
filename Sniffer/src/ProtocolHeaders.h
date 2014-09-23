@@ -97,31 +97,31 @@ struct nagl_tcp {
  */
 // Połączenie nagłowka Ethernet + ARP
 struct eth_arp {
-	struct nagl_eth;
-	struct nagl_arp;
+	struct nagl_eth eth;
+	struct nagl_arp arp;
 
 } eth_arp;
 
 // Polaczenie naglowka Ethernet + Ipv4 + ICMP
 
 struct eth_ip_icmp {
-	struct nagl_eth;
-	struct nagl_ip;
-	struct nagl_icmp;
+	struct nagl_eth eth;
+	struct nagl_ip ip;
+	struct nagl_icmp icmp;
 	unsigned char bufor_danych[1500];
 }__attribute__ ((packed));
 // Polaczenie naglowka Ethernet + Ipv4 + UDP
 struct eth_ip_udp {
-	struct nagl_eth;
-	struct nagl_ip;
-	struct nagl_udp;
+	struct nagl_eth eth;
+	struct nagl_ip ip;
+	struct nagl_udp udp;
 	unsigned char bufor_danych[1500];
 }__attribute__ ((packed));
 // Polaczenie naglowka Ethernet + IP + TCP
 struct eth_ip_tcp {
-	struct nagl_eth;
-	struct nagl_ip;
-	struct nagl_tcp;
+	struct nagl_eth eth;
+	struct nagl_ip ip;
+	struct nagl_tcp tcp;
 	unsigned char bufor_danych[1500];
 }__attribute__ ((packed));
 

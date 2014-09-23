@@ -8,15 +8,11 @@ struct nagl_tcp naglowek_tcp;
 struct nagl_ip naglowek_ip;
 struct nagl_icmp naglowek_icmp;
 struct nagl_udp naglowek_udp;
-struct eth_ip_icmp pakiet_icmp;
-struct eth_ip_udp pakiet_udp;
-struct eth_ip_tcp pakiet_tcp;
-struct eth_arp pakiet_arp;
-unsigned int eth_ip_icmp = sizeof(struct eth_ip_icmp); // mam
-unsigned int eth_ip_udp = sizeof(struct eth_ip_udp); // robi sie
-unsigned int eth_ip_tcp = sizeof(struct eth_ip_tcp); //
-unsigned int eth_aerpe = sizeof(struct eth_arp); // mam
 
+unsigned int eth_ip_icmp = sizeof(struct eth_ip_icmp);
+unsigned int eth_ip_udp = sizeof(struct eth_ip_udp);
+unsigned int eth_ip_tcp = sizeof(struct eth_ip_tcp);
+unsigned int eth_aerpe = sizeof(struct eth_arp);
 
 void ARP(struct nagl_arp *naglowek_arp) {
 	printf("\n");
@@ -61,6 +57,7 @@ void TCP(struct nagl_tcp *naglowek_tcp) {
 	printf("\n");
 	printf("Naglowek TCP\n");
 	printf("\n");
+
 	printf("Port źródlowy: %d\n", reverseshort(naglowek_tcp->sourceport));
 	printf("Port docelowy: %d\n", reverseshort(naglowek_tcp->destinationport));
 	printf("Numer sekwencji: %x\n", reverseint(naglowek_tcp->nrsekwencji));
@@ -104,40 +101,39 @@ void ETHERNET(struct nagl_eth *naglowek_eth) {
 	printf("Type: 0x0%x  \n", reverseshort(naglowek_eth->typ));
 }
 
-void IP (struct nagl_ip *naglowek_ip){
+void IP(struct nagl_ip *naglowek_ip) {
 	printf("\n");
-		printf("Naglowek Internet Protocol\n");
-		printf("\n");
-		printf("Wersja: 0x%x\n", naglowek_ip->IP_version);
-		printf("Dlugość naglowka: 0x%x\n", naglowek_ip->IP_version.dlugosc);
-		printf("Usluga: 0x%x\n", naglowek_ip->klasauslugi);
-		printf("Długość pakietu: 0x%x \n", naglowek_ip->calkowitadlugosc);
-		printf("Identyfikacja: 0x%x\n", naglowek_ip->identyfikacja);
-		printf("Flagi i przesuniecie: 0x%x, MF: 0x%x, DF: 0x%x\n",
-				naglowek_ip->flagaIprzesuniecie.przesuniecie);
-		printf("Flagi i przesuniecie: 0x%x, MF: 0x%x, DF: 0x%x\n",
+	printf("Naglowek Internet Protocol\n");
+	printf("\n");
+	printf("Wersja: 0x%x\n", naglowek_ip->IP_version);
+	printf("Dlugość naglowka: 0x%x\n", naglowek_ip->IP_version.dlugosc);
+	printf("Usluga: 0x%x\n", naglowek_ip->klasauslugi);
+	printf("Długość pakietu: 0x%x \n", naglowek_ip->calkowitadlugosc);
+	printf("Identyfikacja: 0x%x\n", naglowek_ip->identyfikacja);
+	printf("Flagi i przesuniecie: 0x%x, MF: 0x%x, DF: 0xx\n",
+			naglowek_ip->flagaIprzesuniecie.przesuniecie);
+	printf("Flagi i przesuniecie: 0x%x, MF: 0x%x, DF: 0x%x\n",
 			naglowek_ip->flagaIprzesuniecie.flaga);
 	printf("Czas życia: %d \n", naglowek_ip->ttl);
 	printf("Protokol: 0x%x\n", naglowek_ip->prtokolnizszy);
-		printf("Suma kontrolna nagłowka: 0x%x\n", naglowek_ip->crc);
-		printf("Adresu zrodlowy IP: %d %d %d %d \n", naglowek_ip->sourceIP[0],
-				naglowek_ip->sourceIP[1], naglowek_ip->sourceIP[2],
-				naglowek_ip->sourceIP[3]);
-		printf("Adres docelowy IP: %d %d %d %d \n", naglowek_ip->destinationIP[0],
-				naglowek_ip->destinationIP[1], naglowek_ip->destinationIP[2],
-				naglowek_ip->destinationIP[3]);
+	printf("Suma kontrolna nagłowka: 0x%x\n", naglowek_ip->crc);
+	printf("Adresu zrodlowy IP: %d %d %d %d \n", naglowek_ip->sourceIP[0],
+			naglowek_ip->sourceIP[1], naglowek_ip->sourceIP[2],
+			naglowek_ip->sourceIP[3]);
+	printf("Adres docelowy IP: %d %d %d %d \n", naglowek_ip->destinationIP[0],
+			naglowek_ip->destinationIP[1], naglowek_ip->destinationIP[2],
+			naglowek_ip->destinationIP[3]);
 }
 
-void UDP (struct nagl_udp *naglowek_udp){
+void UDP(struct nagl_udp *naglowek_udp) {
 	printf("\n");
-		printf("Naglowek User datagram protokol \n");
-		printf("\n");
-		printf("Port źrodłowy UDP: %d %d \n", naglowek_udp->sourceport[0],
-				naglowek_udp->sourceport[1]);
-		printf("Port docelowy UDP: %d %d \n", naglowek_udp->destinationport[0],
-				naglowek_udp->destinationport[1]);
-		printf("Długość UDP: %d %d \n", naglowek_udp->lenght[0],
-				naglowek_udp->lenght[1]);
-		printf("Suma kontrolna: %d \n", naglowek_udp->crc);
-		//asdasdasd
+	printf("Naglowek User datagram protokol \n");
+	printf("\n");
+	printf("Port źrodłowy UDP: %d %d \n", naglowek_udp->sourceport[0],
+			naglowek_udp->sourceport[1]);
+	printf("Port docelowy UDP: %d %d \n", naglowek_udp->destinationport[0],
+			naglowek_udp->destinationport[1]);
+	printf("Długość UDP: %d %d \n", naglowek_udp->lenght[0],
+			naglowek_udp->lenght[1]);
+	printf("Suma kontrolna: %d \n", naglowek_udp->crc);
 }
